@@ -5,7 +5,8 @@ RemoteSystemsTempFiles
 *.classpath
 *.class
 *.jar
-.setting
+.settings
+*/.settings
 .project
 *.war
 /target/
