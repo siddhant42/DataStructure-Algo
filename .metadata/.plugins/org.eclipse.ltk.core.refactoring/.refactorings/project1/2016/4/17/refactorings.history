@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename method &apos;backtrack.Hamilton.hamCycle(...)&apos; to &apos;findPath&apos;&#x0D;&#x0A;- Original project: &apos;project1&apos;&#x0D;&#x0A;- Original element: &apos;backtrack.Hamilton.hamCycle(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;backtrack.Hamilton.findPath(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;hamCycle&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;backtrack{Hamilton.java[Hamilton~hamCycle~\[\[I" name="findPath" references="true" stamp="1461423826200" version="1.0"/>
-</session>

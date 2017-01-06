@@ -1,9 +1,0 @@
-package dynamic2;
-
-public class RodCut {
-public static void main(String[] args) {
-	int n = 3;
-	int sum = new RodCut().find(n);
-	System.out.println(sum);
-}
-}

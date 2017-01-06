@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;A&apos; in &apos;dynamic.LIS2.CeilIndex(...)&apos; to &apos;a&apos;&#x0D;&#x0A;- Original project: &apos;project1&apos;&#x0D;&#x0A;- Original element: &apos;dynamic.LIS2.CeilIndex(int[], int, int, int).A&apos;&#x0D;&#x0A;- Renamed element: &apos;A&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;A&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;dynamic{LIS2.java[LIS2~CeilIndex~\[I~I~I~I@A!144!148!148!148!\[I!0!true" name="a" references="true" stamp="1465616080923" version="1.0"/>
-</session>

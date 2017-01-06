@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;height&apos; in &apos;tree.AVLTree.Node&apos; to &apos;ht&apos;&#x0D;&#x0A;- Original project: &apos;project1&apos;&#x0D;&#x0A;- Original element: &apos;tree.AVLTree.Node.height&apos;&#x0D;&#x0A;- Renamed element: &apos;tree.AVLTree.Node.ht&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;height&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;tree{AVLTree.java[AVLTree[Node^height" name="ht" references="true" setter="false" stamp="1474568659052" textual="false" version="1.0"/>
-</session>
