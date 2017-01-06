@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;st&apos; in &apos;dynamic.S1.find(...)&apos; to &apos;idx&apos;&#x0D;&#x0A;- Original project: &apos;project1&apos;&#x0D;&#x0A;- Original element: &apos;dynamic.S1.find(int[], int, int).st&apos;&#x0D;&#x0A;- Renamed element: &apos;st&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;st&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;dynamic{S1.java[S1~find~\[I~I~I@st!226!231!230!231!I!0!true" name="idx" references="true" stamp="1463627204023" version="1.0"/>
+</session>

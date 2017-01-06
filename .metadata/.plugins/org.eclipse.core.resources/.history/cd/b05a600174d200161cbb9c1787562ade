@@ -1,0 +1,21 @@
+package tree;
+
+import java.util.Stack;
+
+public class TreeTraversal {
+	static class Node {
+		int data;
+		Node left,right;
+	}
+	public void preorder(Node root) {
+		if(root==null) return;
+		Stack<Node> s = new Stack<>();
+		while(root!=null) {
+			s.push(root);
+			root=root.left;
+		}
+		while(!s.empty()) {
+			
+		}
+	}
+}

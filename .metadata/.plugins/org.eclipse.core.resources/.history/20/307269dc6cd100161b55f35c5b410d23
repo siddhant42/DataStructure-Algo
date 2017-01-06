@@ -1,0 +1,17 @@
+package dynamic2;
+
+public class RodCut {
+	public int find(int n,int maxsum) {
+		if(n==1) return maxsum;
+		for(int i=1;i<=Math.sqrt(n);i++) {
+			int max = Math.max(i*find(n-i,maxsum), i*n-i);
+			if(maxsum<max) maxsum  = max;
+		}
+		return maxsum;
+	}
+public static void main(String[] args) {
+	int n = 3;
+	int sum = new RodCut().find(n,1);
+	System.out.println(sum);
+}
+}

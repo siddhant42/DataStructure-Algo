@@ -1,0 +1,8 @@
+package dynamic2;
+
+public class CandiesSum {
+public static void main(String[] args) {
+	int[] s = {1,2,3};
+	
+}
+}

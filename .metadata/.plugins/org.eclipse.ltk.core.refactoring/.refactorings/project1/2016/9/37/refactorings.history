@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;prefix&apos; in &apos;trie.Solution.startsWith(...)&apos; to &apos;word&apos;&#x0D;&#x0A;- Original project: &apos;project1&apos;&#x0D;&#x0A;- Original element: &apos;trie.Solution.startsWith(String, int, TrieNode).prefix&apos;&#x0D;&#x0A;- Renamed element: &apos;prefix&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;prefix&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;trie{Solution.java[Solution~startsWith~QString;~I~QTrieNode;@prefix!1742!1754!1749!1754!QString;!0!true" name="word" references="true" stamp="1473358822980" version="1.0"/>
+</session>

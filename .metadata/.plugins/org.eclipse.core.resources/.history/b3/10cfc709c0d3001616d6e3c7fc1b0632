@@ -1,0 +1,33 @@
+package tree;
+
+import tree.TopView.Node;
+
+public class InorderSuccessorImpl {
+	static class Node{
+		private int data;
+		private Node left;
+		private Node right;
+		public Node(int data){
+			this.data=data;
+			this.left=null;
+			this.right=null;
+		}
+	}
+	public Node findInorderSuccessor(Node root,Node p) {
+		
+	}
+	public static void main(String[] args) {
+		Node root = new Node(1);
+		root.left = new Node(2);
+		root.right = new Node(3);
+		root.left.left = new Node(4);
+		root.left.right = new Node(5);
+		root.left.right.left = new Node(6);
+		root.right.left = new Node(7);
+		root.right.left.right = new Node(8);
+		root.right.left.right.right=new Node(9);
+		InorderSuccessorImpl obj = new InorderSuccessorImpl();
+		obj.findInorderSuccessor(root, root.left.right.left);
+		
+	}
+}

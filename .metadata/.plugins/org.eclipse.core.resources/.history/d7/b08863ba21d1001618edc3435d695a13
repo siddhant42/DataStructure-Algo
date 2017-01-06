@@ -1,0 +1,12 @@
+package dynamic2;
+
+public class CandiesSum {
+	int find()
+	public static void main(String[] args) {
+		CandiesSum obj = new CandiesSum();
+		//int[] s = {1,2,3};
+		String str = "123";
+		
+
+	}
+}
