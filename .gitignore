@@ -3,9 +3,8 @@
 RemoteSystemsTempFiles
 
 *.classpath
- 
-*.class 
-
+*.class
+*.jar
 .setting
 .project
 *.war
