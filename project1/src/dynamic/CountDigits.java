@@ -1,37 +1,56 @@
 package dynamic;
-
+/**
+ * Given two integers ‘n’ and ‘sum’, find count of all n digit numbers
+ *  with sum of digits as ‘sum’. Leading 0’s are not counted as digits.
+ *  1 <= n <= 100 and 1 <= sum <= 50000
+ *  Example:
+ *  Input:  n = 2, sum = 2
+ *  Output: 2
+ *  Explanation: Numbers are 11 and 20
+ *  Input:  n = 2, sum = 5
+ *  Output: 5
+ *  Explanation: Numbers are 14, 23, 32, 41 and 50
+ *  Input:  n = 3, sum = 6
+ *  Output: 21
+ *  
+ * @author Siddhant Kumar
+ *
+ */
 public class CountDigits {
 	public static void main(String[] args) {
-		int n = 3, sum = 5;
-		int[] a= new int[n];
-		new CountDigits().find(a,0,sum);
+		int n = 100, sum = 128;
+		long count = new CountDigits().find(n,sum);
+		System.out.println(count);
 	}
-
-	private  void find(int[] a, int idx, int sum) {
-		if(idx==a.length){
-			if(sum==findSum(a,a.length)){
-				print(a,0);
-			System.out.println();	
-			}
-			return;
-		}
-		//if(sum<findSum(a,a.length)) return;
-		for(int i=0;i<=9 && i<=sum;i++){
+	// recursively
+	public long find(int n, int sum, int idx) {
+		if(sum<0||idx>n||(n*9)<sum) return 0;
+		else if(sum==0 && idx==n) return 1;
+		long count = 0;
+		for(int i=0;i<10&&(i<=sum);i++) {
 			if(idx==0 && i==0) continue;
-			a[idx]=i;
-			find(a,idx+1,sum);
+				count+=find(n,sum-i,idx+1);
 		}
-		
+		return count;
 	}
-
-	private void print(int[] a,int n) {
-		if(n==a.length) return;
-		System.out.print(a[n]+" ");
-		print(a,n+1);
-	}
-
-	private  int findSum(int[] a,int n) {
-		if(n==0) return 0;
-		return a[n-1]+findSum(a,n-1);
+	// dynamically
+	private long find(int n, int sum) {
+		long[][] a = new long[sum+1][n+1];
+		a[0][0]=0;
+		for(int i=1;i<=n;i++)
+			a[0][i]=1;
+		for(int i=0;(i<10)&&(i<=sum);i++)
+			a[i][1]=1;
+		for(int i=10;i<=sum;i++)
+				a[i][1]=0;
+		for(int i=2;i<=n;i++) {
+			for(int j=1;j<=sum;j++) {
+				for(int k=0;(k<10)&&(k<=j);k++) {
+					if(k==0 && i==n) continue;
+					a[j][i] += a[j-k][i-1];
+				}
+			}
+		}
+		return a[sum][n];
 	}
 }
