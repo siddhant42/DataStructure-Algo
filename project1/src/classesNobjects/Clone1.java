@@ -29,7 +29,7 @@ class A1 implements Cloneable {
 }
 public class Clone1 {
 	public static void main(String[] args) throws Exception {
-		Integer[] p = {3,6,9,12};
+/*		Integer[] p = {3,6,9,12};
 		Integer[] x = {1,3,7,4};
 		String s = "abc";
 		int k = 234;
@@ -42,5 +42,10 @@ public class Clone1 {
 //		A1 obj2 = new A1(k,p);
 //		obj.b[0]=81;
 //		System.out.println(obj2.b[0]);
-	}
+*/	
+		Employee e1 = new Employee("Siddhant");
+		String n = e1.getName();
+		n = "Sid";
+		System.out.println(e1.getName());
+		}
 }

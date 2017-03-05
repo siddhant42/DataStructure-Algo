@@ -19,7 +19,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @author kulshres
+ * @author Siddhant Kumar
  */
 @SuppressWarnings( "nls" )
 public class MyCallable implements Callable

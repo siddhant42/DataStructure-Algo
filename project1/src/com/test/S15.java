@@ -1,36 +1,37 @@
 package com.test;
 
-import java.util.Arrays;
 
 public class S15 {
-/*	static int find(int[] coins,int v) {
-		if(v==0) return 0;
-		int res = Integer.MAX_VALUE;
-		for(int i=0;i<coins.length;i++) {
-			if(coins[i]<=v) {
-				int subres = find(coins,v-coins[i]);
-				if(subres!=Integer.MAX_VALUE && res>subres+1)
-					res = subres+1;
-			}
+	// recursively
+/*	public int find(int[] coins,int v){
+		return find(coins,v,0);
+	}
+	private int find(int[] coins,int v,int st) {
+		if(v==0) return 1;
+		if(st>=coins.length||v<0) return 0;
+		
+		int count=0;
+		for(int i=0;i*coins[st]<=v;i++) {
+			count+=find(coins,v-i*coins[st],st+1);
 		}
-		return res;
+		return count;
 	}*/
-	static int find(int[] coins,int v){
+	// dynamically
+	public int find(int[] coins,int v) {
 		int[] s = new int[v+1];
-		Arrays.fill(s, Integer.MAX_VALUE);
-		s[0]=0;
-		for(int i=1;i<s.length;i++) {
-			for(int j=0;j<coins.length;j++) {
-				if(coins[j]<=i){
-					s[i] = Math.min(s[i], 1+s[i-coins[j]]);
-				}
-			}
-		}
+		s[0]=1;
+			for(int j=3;j<=v;j++)
+				s[j]+=s[j-3];
+			for(int j=5;j<=v;j++)
+				s[j]+=s[j-5];
+			for(int j=10;j<=v;j++)
+				s[j]+=s[j-10];
+		
 		return s[v];
 	}
 	public static void main(String[] args) {
-		int[] coins = {9,6,5,1};
-		int v=11;
-		System.out.println(find(coins,v));
+		int[] coins={3,5,10};
+		int v=15;
+		System.out.println(new S15().find(coins, v));
 	}
 }

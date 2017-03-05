@@ -46,10 +46,10 @@ public class Median1 {
 	}
 	public static void main(String[] args) {
 		Median1 obj = new Median1();
-		   int a1[] = {1, 3, 5, 11, 17};
-		    int a2[] = {9, 10, 11, 13, 14};
-//		int a1[] = {1,2,3,6};
-//	    int a2[] = {4,6,8,10};
+//		   int a1[] = {1, 3, 5, 11, 17};
+//		    int a2[] = {9, 10, 11, 13, 14};
+		int a1[] = {1,2,3,6};
+	    int a2[] = {4,6,8,10};
 		    double med = obj.findMedian(a1, a2);
 		    System.out.println(BigDecimal.valueOf(med));
 	}
