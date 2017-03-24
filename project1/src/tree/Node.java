@@ -1,11 +1,9 @@
 package tree;
 
 public class Node {
-	int data;
-	int ht;
-	int size;
-	Node left,right;
+	public int data;
+	public int ht;
+	public int size;
+	public Node left,right;
 	
-	public Node() {
-	}
 }

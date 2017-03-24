@@ -6,17 +6,15 @@ class LIS2
 	// A[] is ceilIndex in the caller
 	static int CeilIndex(int a[], int l, int r, int key)
 	{
-/*		while (r - l > 1)
-		{
-			int m = l + (r - l)/2;
-			if (a[m]>=key)
-				r = m;
-			else
-				l = m;
-		}
-
-		return r;*/
-		while(r>l+1){
+		if(l>=r) return r;
+		int m = (l+r)/2;
+		if(m>0 && a[m-1]<=key && key<=a[m])
+			return m;
+		else if (key>a[m])
+			return CeilIndex(a,m+1,r,key);
+		else
+			return CeilIndex(a,l,m-1,key);
+/*		while(r>l+1){
 			int m=(r-l)/2;
 			if(m>0 && a[m-1]<=key && key<a[m])
 				return m;
@@ -25,7 +23,7 @@ class LIS2
 			else
 				r=m-1;
 		}
-		return r;
+		return r;*/
 	}
 
 	static int LongestIncreasingSubsequenceLength(int A[], int size)
@@ -50,7 +48,7 @@ class LIS2
 			else
 				// A[i] wants to be current end candidate of an existing
 				// subsequence. It will replace ceil value in tailTable
-				tailTable[CeilIndex(tailTable, -1, len-1, A[i])] = A[i];
+				tailTable[CeilIndex(tailTable, 0, len-1, A[i])] = A[i];
 		}
 
 		return len;

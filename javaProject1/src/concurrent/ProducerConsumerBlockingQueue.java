@@ -16,7 +16,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedTransferQueue;
 
 /**
- * @author kulshres
+ * @author Siddhant Kumar
  */
 @SuppressWarnings( "nls" )
 public class ProducerConsumerBlockingQueue

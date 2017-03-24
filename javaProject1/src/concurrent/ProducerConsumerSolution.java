@@ -17,7 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author kulshres
+ * @author Siddhant Kumar
  */
 @SuppressWarnings( "nls" )
 public class ProducerConsumerSolution

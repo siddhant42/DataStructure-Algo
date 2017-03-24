@@ -25,7 +25,7 @@ public class Permute5 {
 	}
 	public static void main(String[] args) {
 		Permute5 obj = new Permute5();
-		int[] a={1,2,3};
+		int[] a={1,2,3,2};
 		obj.permute(a, 0);
 
 	}
