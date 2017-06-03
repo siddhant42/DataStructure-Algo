@@ -1,6 +1,6 @@
 package trie;
 
-public class Trie3 {
+public class TST {
 	static class Node {
 		int data;
 		Node left,mid,right;
@@ -41,7 +41,7 @@ public class Trie3 {
 		return false;
 	}
 	public static void main(String[] args) {
-		Trie3 trie = new Trie3();
+		TST trie = new TST();
 		Node root = null;
 		root = trie.insert(root,"ca");
 		root =trie.insert(root,"cat");

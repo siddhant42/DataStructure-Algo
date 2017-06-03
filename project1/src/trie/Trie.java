@@ -19,16 +19,12 @@ public class Trie {
     // Inserts a word into the trie.
     public void insert(String word) {
         TrieNode p = root;
-        for(int i=0; i<word.length(); i++){
+        for(int i=0; i<word.length(); i++) {
             char c = word.charAt(i);
             int index = c-'a';
-            if(p.arr[index]==null){
-                TrieNode temp = new TrieNode();
-                p.arr[index]=temp;
-                p = temp;
-            }else{
+            if(p.arr[index]==null)
+                p.arr[index]= new TrieNode();
                 p=p.arr[index];
-            }
         }
         p.isEnd=true;
     }

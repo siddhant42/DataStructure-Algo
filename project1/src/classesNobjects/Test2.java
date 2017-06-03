@@ -1,7 +1,8 @@
 package classesNobjects;
 
-public class Test2 {
 
+public class Test2 {
+	
 	public static void main(String[] args) {
 		//Test1 t1 = Test1.INSTANCE;
 		//System.out.println(t1.i);

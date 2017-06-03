@@ -4,9 +4,9 @@ package trie;
 
 public class Trie1 {
 	static class TrieNode {
-	    char val;
-	    TrieNode left, mid, right;
-	    boolean end;
+	    private char val;
+	    private TrieNode left, mid, right;
+	    private boolean end;
 	    
 	    // Initialize your data structure here.
 	    public TrieNode() {
@@ -20,21 +20,21 @@ public class Trie1 {
     private TrieNode root;
 
     public Trie1() {
-        root = new TrieNode();
+        root = null;
     }
 
     // Inserts a word into the trie.
     public void insert(String word) {
-        if (word != null && !word.isEmpty()) insert(word, 0, root);
+        if (word != null && !word.isEmpty()) root = insert(word.toCharArray(), 0, root);
     }
     
-    private TrieNode insert(String word, int index, TrieNode node) {
+    private TrieNode insert(char[] word, int index, TrieNode node) {
 
-    	char ch = word.charAt(index);
+    	char ch = word[index];
         if (node == null) node = new TrieNode(ch);
         if (ch < node.val) node.left = insert(word, index, node.left);
         else if (ch > node.val) node.right = insert(word, index, node.right);
-        else if (index < word.length() - 1) node.mid = insert(word, index + 1, node.mid);
+        else if (index < word.length - 1) node.mid = insert(word, index + 1, node.mid);
         else node.end = true;
         return node;
     }
@@ -81,6 +81,6 @@ public class Trie1 {
     	 trie.insert("mad");
     	 trie.insert("maze");
     	 
-    	 System.out.println(trie.search("ca"));
+    	 System.out.println(trie.search("cat"));
 	}
 }

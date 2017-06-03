@@ -28,7 +28,8 @@ public class QuickSort {
 		sort(a,ub+1,high);
 	}
 	public static void main(String[] args) {
-		int[] a = {4,87,23,1,54};
+		//int[] a = {4,87,23,1,54};
+		int[] a = {7,10,4,3,20,15};
 		sort(a);
 		ArrayPrint.print(a);
 	}
