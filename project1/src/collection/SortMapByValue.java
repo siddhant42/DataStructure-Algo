@@ -32,9 +32,9 @@ public class SortMapByValue
 		printMap(sortedMapAsc);
 
 
-		System.out.println("After sorting descindeng order......");
+	/*	System.out.println("After sorting descindeng order......");
 		Map<String, Integer> sortedMapDesc = sortByComparator(unsortMap, DESC);
-		printMap(sortedMapDesc);
+		printMap(sortedMapDesc);*/
 
 	}
 
@@ -44,7 +44,7 @@ public class SortMapByValue
 		List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(unsortMap.entrySet());
 
 		// Sorting the list based on values
-		Collections.sort(list, new Comparator<Entry<String, Integer>>()
+		Collections.sort(list, /*new Comparator<Entry<String, Integer>>()
 		{
 			public int compare(Entry<String, Integer> o1,
 					Entry<String, Integer> o2)
@@ -58,8 +58,7 @@ public class SortMapByValue
 					return o2.getValue().compareTo(o1.getValue());
 
 				}
-			}
-		});
+			}*/ (o1,o2)-> o1.getValue().compareTo(o2.getValue()));
 
 		// Maintaining insertion order with the help of LinkedList
 		Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();

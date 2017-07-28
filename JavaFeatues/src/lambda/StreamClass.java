@@ -12,7 +12,7 @@ public class StreamClass {
 		
 		long count = getCountEmptyStringUsingJava7(strings);
 		System.out.println("Empty Strings in Java 7: " + count);
-		count = strings.stream().filter(string -> string.isEmpty()).count();
+		count = strings.stream().filter(dev -> dev.isEmpty()).count();
 		System.out.println("Empty Strings in Java 8: " + count);
 
 		count = getCountLength3UsingJava7(strings);

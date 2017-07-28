@@ -54,7 +54,7 @@ public class MinHeap {
 		return removeNode(0);
 	}
 	public Integer removeNode(int pos) {
-		if(arr==null || size==0)
+		if(arr==null || size==0 || pos>=size)
 			return null;
 		int tmp = arr[pos];
 		arr[pos] = arr[--size];

@@ -71,11 +71,11 @@ public class TreeTraversal {
 		while(!s.empty()) {
 			Node p = s.pop();
 			while(p.right!=null) {
-				p = p.right;
 				s.push(p);
+				p = p.right;				
 				while(p.left!=null) {
-					p = p.left;
 					s.push(p);
+					p = p.left;					
 				}
 			}
 			System.out.print(p.data+" ");
@@ -103,15 +103,16 @@ public class TreeTraversal {
 		root.right.right = new Node(7);
 		root.left.right.left = new Node(8);
 		root.left.right.right = new Node(9);
-		obj.inorder(root);
+		//obj.inorder(root);
+		obj.postorder(root);
 		System.out.println();
 //		obj.preorder(root);
-		int size = obj.size(root);
+	/*	int size = obj.size(root);
 		int[] a = new int[size];
 		obj.idx=0;
 		obj.find(root,a);
 		for(int i:a) {
 			System.out.print(i+" ");
-		}
+		}*/
 	}
 }
