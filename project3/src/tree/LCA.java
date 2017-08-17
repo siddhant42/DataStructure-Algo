@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /*program to find common ancestor of a binary tree*/
-public class Tree8 {
+public class LCA {
 	static class Node{
 		int data;
 		Node left;
@@ -13,7 +13,8 @@ public class Tree8 {
 			data=n;
 			left=null;
 			right=null;
-		}}
+		}
+	}
 
 	Node findLca(Node root,Node p1,Node p2){
 		if(root==null) return null;
@@ -50,7 +51,7 @@ public class Tree8 {
 		root.right.right=new Node(7);
 		root.left.left.right=new Node(8);
 		root.left.right.right=new Node(9);
-		Tree8 obj=new Tree8();
+		LCA obj=new LCA();
 		Node p1=root.left.left.right;
 		Node p2=root.left.right.right;
 		ArrayList<Integer> Path=new ArrayList<Integer>();

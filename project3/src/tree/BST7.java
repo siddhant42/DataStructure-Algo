@@ -10,7 +10,8 @@ public class BST7 {
 			data=n;
 			left=null;
 			right=null;
-		}}
+		}
+	}
 	public static void main(String[] args) {
 		Node root=new Node(5);
 		root.left=new Node(3);
@@ -40,7 +41,7 @@ public class BST7 {
 			root.left=prev;
 			prev.right=root;
 		}
-		
+
 		prev=root;
 		convert(root.right);
 	}

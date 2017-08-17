@@ -10,22 +10,23 @@ public class BST8 {
 			data=n;
 			left=null;
 			right=null;
-		}}
+		}
+	}
 	Node largestBST=null,child=null;
 	int maxnode;
-	
+
 	int find(Node root,int min,int max){
 		if(root==null) return 0;
-		
-			if(root.data>min&&root.data<max){
-				int leftnode=find(root.left,min,root.data);
-				Node leftchild=(leftnode==0)?null:child;
-				int rightnode=find(root.right,root.data,max);
-				Node rightchild=(rightnode==0)?null:child;
-				Node parent=new Node(root.data);
-				parent.left=leftchild;
-				parent.right=rightchild;
-				child=parent;
+
+		if(root.data>min&&root.data<max){
+			int leftnode=find(root.left,min,root.data);
+			Node leftchild=(leftnode==0)?null:child;
+			int rightnode=find(root.right,root.data,max);
+			Node rightchild=(rightnode==0)?null:child;
+			Node parent=new Node(root.data);
+			parent.left=leftchild;
+			parent.right=rightchild;
+			child=parent;
 			int totalnode=leftnode+rightnode+1;
 			if(maxnode<totalnode) {
 				maxnode=totalnode;
@@ -34,7 +35,7 @@ public class BST8 {
 			return totalnode;
 		}
 		else
-		return 0;
+			return 0;
 	}
 	public static void main(String[] args) {
 		Node root=new Node(5);
@@ -54,9 +55,9 @@ public class BST8 {
 		obj.find(root,min,max);
 		System.out.println(obj.maxnode);
 		obj.inorder(obj.largestBST);
-	
+
 	}	
-	
+
 	void inorder(Node root){
 		if(root==null) return;
 		inorder(root.left);

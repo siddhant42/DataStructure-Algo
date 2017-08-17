@@ -25,10 +25,7 @@ public class TreeTraversal {
 	public void inorder(Node root) {
 		if(root==null) return;
 		Stack<Node> s = new Stack<>();
-		while(root!=null) {
-			s.push(root);
-			root=root.left;
-		}
+		s.push(root);
 		while(!s.empty()) {
 			Node p = s.pop();
 			System.out.print(p.data+" ");
@@ -38,6 +35,23 @@ public class TreeTraversal {
 					s.push(p);
 					p = p.left;
 				}
+			}
+		}
+	}
+	public void inorder2(Node root) {
+		if(root == null) return;
+		Stack<Node> s= new Stack<>();
+		while(root!=null) {
+			if(root.right!=null) s.push(root.right);
+			System.out.print(root.data+" ");
+			root = root.left;
+		}
+		while(!s.empty()) {
+			Node p = s.pop();
+			while(p!=null) {
+				System.out.print(p.data+" ");
+				if(p.right!=null) s.push(p.right);
+				p = p.left;
 			}
 		}
 	}
@@ -104,9 +118,9 @@ public class TreeTraversal {
 		root.left.right.left = new Node(8);
 		root.left.right.right = new Node(9);
 		//obj.inorder(root);
-		obj.postorder(root);
-		System.out.println();
-//		obj.preorder(root);
+//		obj.postorder(root);
+//		System.out.println();
+		obj.preorder(root);
 	/*	int size = obj.size(root);
 		int[] a = new int[size];
 		obj.idx=0;

@@ -3,7 +3,7 @@ package tree;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class TopView {
+public class BottomView {
 	static class Node{
 		private int data;
 		private Node left;
@@ -14,19 +14,18 @@ public class TopView {
 			this.right=null;
 		}
 	}
-	public void topView(Node root) {
+	public void bottomView(Node root) {
 		Map<Integer,Node> map = new TreeMap<>();
-		topViewRec(root,map,0);
-		for(Map.Entry<Integer,Node> entry: map.entrySet()) {
+		bottomViewRec(root,map,0);
+		for(Map.Entry<Integer, Node> entry: map.entrySet()) {
 			System.out.print(entry.getValue().data+" ");
 		}
 	}
-	private void topViewRec(Node root,Map<Integer,Node> map,int level) {
-		if(root == null) return;
-		if(map.get(level) == null)
-			map.put(level,root);
-		topViewRec(root.left,map,level-1);
-		topViewRec(root.right,map,level+1);
+	private void bottomViewRec(Node root,Map<Integer,Node> map,int level) {
+		if(root==null) return;
+		map.put(level, root);
+		bottomViewRec(root.left,map,level-1);
+		bottomViewRec(root.right,map,level+1);
 	}
 	public static void main(String[] args) {
 		Node root = new Node(1);
@@ -38,8 +37,7 @@ public class TopView {
 		root.right.left = new Node(7);
 		root.right.left.right = new Node(8);
 		root.right.left.right.right=new Node(9);
-		TopView obj = new TopView();
-		obj.topView(root);
-		
+		BottomView obj = new BottomView();
+		obj.bottomView(root);
 	}
 }

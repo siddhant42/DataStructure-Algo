@@ -15,7 +15,7 @@ public class Palindrome {
 		head = insert(head,3);
 		head = insert(head,4);
 		head = insert(head,5);
-		//head = insert(head,4);
+		head = insert(head,4);
 		head = insert(head,3);
 		head = insert(head,2);
 		head = insert(head,1);

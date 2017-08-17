@@ -2,7 +2,7 @@ package tree;
 
 
 /*program to find common ancestor of a binary tree*/
-public class Tree9 {
+public class LCA2 {
 	static class Node{
 		int data;
 		Node left;
@@ -12,7 +12,8 @@ public class Tree9 {
 			data=n;
 			left=null;
 			right=null;
-		}}
+		}
+	}
 	Node findLca(Node root,Node p1,Node p2){
 		if(root==null) return null;
 		if(root==p1||root==p2)
@@ -33,7 +34,7 @@ public class Tree9 {
 		root.right.right=new Node(7);
 		root.left.left.right=new Node(8);
 		root.left.right.right=new Node(9);
-		Tree9 obj=new Tree9();
+		LCA2 obj=new LCA2();
 		Node p1=root.left.left.right;
 		Node p2=root.left.right.right;
 		Node lca=obj.findLca(root,p1,p2);

@@ -1,12 +1,12 @@
 package tree;
 class Node{
-int data;
-Node next;
-public Node(int data) {
-	super();
-	this.data = data;
-	next=null;
-}
+	int data;
+	Node next;
+	public Node(int data) {
+		super();
+		this.data = data;
+		next=null;
+	}
 
 }
 public class BST4 {
@@ -14,7 +14,7 @@ public class BST4 {
 	BST4 left;
 	BST4 right;
 
-public BST4() {
+	public BST4() {
 		super();
 	}
 	public BST4(int data) {

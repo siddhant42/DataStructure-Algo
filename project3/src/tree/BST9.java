@@ -12,7 +12,8 @@ public class BST9 {
 			data=n;
 			left=null;
 			right=null;
-		}}
+		}
+	}
 	public static void main(String[] args) {
 		Node root=new Node(5);
 		root.left=new Node(3);
@@ -32,10 +33,10 @@ public class BST9 {
 		convert(root.left);
 		if(prev==null){
 			head=root;
-			
+
 		}
 		else{
-		
+
 			prev.right=root;
 		}
 		prev=root;

@@ -5,8 +5,7 @@ public class UglyFinder {
 		int n = 150;
 		System.out.println(new UglyFinder().findUgly(n));
 	}
-
-	private int findUgly(int n) {
+	public int findUgly(int n) {
 		if(n<=0) return -1;
 		int i2,i3,i5,nextUgly=0;
 		i2=i3=i5=0;
@@ -15,15 +14,8 @@ public class UglyFinder {
 		int nextugly5=5;
 		int[] ugly = new int[n+1];
 		ugly[0]=1;
-		int p;
 		for(int i=1;i<=n;i++) {
 			nextUgly=min(nextugly2,nextugly3,nextugly5);
-			p=nextUgly;
-			p=maxDivide(p,2);
-			p=maxDivide(p,3);
-			p=maxDivide(p,5);
-			if(p!=1)
-				System.out.println(nextUgly);
 			ugly[i] = nextUgly;
 			if(nextUgly == nextugly2) {
 				i2++;
@@ -46,10 +38,4 @@ public class UglyFinder {
 		else if (b<=a && b<=c) return b;
 		return c;
 	}
-	private int maxDivide(int a, int b)
-	{
-		while (a%b == 0)
-			a = a/b; 
-		return a;
-	} 
 }
