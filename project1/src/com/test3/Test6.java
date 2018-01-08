@@ -3,31 +3,36 @@ package com.test3;
 import java.util.Scanner;
 
 public class Test6 {
-	static void print(int n) {
-		if(n<=0) {
-//			char c = (char)(n+64);
-//			System.out.println(c);
-			return;
-		}
-		int x = n/26;
-		int y = n%26;
-		if(y==0) {
-			y=26;
-			x-=1;
-		}
-		print(x);
-		char c = (char)(y+64);
-		System.out.print(c);
-	}
+	static int findPossibleSmallestNumberMatchingPattern(String pattern) {
+	    char[] s = pattern.toCharArray();
+	        int[] ch = new int[s.length+1];
+	        for(int i=0;i<ch.length;i++)
+	            ch[i]=i+1;
+	        int n = ch.length;
+	        int i=n-2;
+	        while(i>=0) {
+	            if(s[i]=='M') {
+	                int tmp = ch[i];
+	                ch[i] = ch[i+1];
+	                ch[i+1] = tmp;
+	                int j=i+1;
+	                while(j<=n-2 && s[j]=='M') {
+	                    tmp = ch[j];
+	                    ch[j]=ch[j+1];
+	                    ch[j+1] = tmp;
+	                    j++;
+	                }
+	            }
+	            i--;
+	        }
+	        String str ="";
+	        for(int j:ch) {
+	            str+=j;
+	        }
+	        return Integer.parseInt(str);
+	    }
 	public static void main(String[] args) {
-		int n = 26*26*26;
-		print(n);
-	/*	Scanner sc = new Scanner(System.in);
-		while(true) {
-			int n = sc.nextInt();
-			if(n<=0) break;
-			print(n);
-			
-		}*/
+		String s= "M";
+		System.out.println(findPossibleSmallestNumberMatchingPattern(s));
 	}
 }

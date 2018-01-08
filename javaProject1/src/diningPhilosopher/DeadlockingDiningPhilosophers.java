@@ -1,4 +1,4 @@
-package concurrent3;
+package diningPhilosopher;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

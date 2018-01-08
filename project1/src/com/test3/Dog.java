@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 class Dog implements Serializable {
-	transient private Collar theCollar; // we can’t serialize this
+	 private Collar theCollar; // we can’t serialize this
 	private int dogSize;
 	public Dog(Collar collar, int size) {
 		theCollar = collar;

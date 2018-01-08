@@ -1,4 +1,4 @@
-package concurrent3;
+package diningPhilosopher;
 
 class Chopstick {
 
