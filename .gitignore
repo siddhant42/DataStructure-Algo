@@ -10,3 +10,4 @@ RemoteSystemsTempFiles
 .project
 *.war
 /target/
+/bin/
