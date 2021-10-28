@@ -10,6 +10,11 @@ public class QuickSort {
 	public static void sort(int[] a,int low,int high) {
 		if(low>=high) return;
 		count++;
+		int pi = partition(a, low, high);
+		sort(a,low,pi-1);
+		sort(a,pi+1,high);
+	}
+	private static int partition(int[] a, int low, int high) {
 		int pivot = a[low];
 		int lb = low,ub = high;
 		while(lb<ub) {
@@ -17,22 +22,26 @@ public class QuickSort {
 				lb++;
 			while(a[ub]>=pivot && ub>low)
 				ub--;
-			if(ub==low) return;
+			if(ub==low) break;
 			if(lb<ub) {
-				int swap = a[lb];
-				a[lb] = a[ub];
-				a[ub] = swap;
+				swap(a, lb, ub);
+				lb++;
+				ub--;
 			}
 		}
+		swap(a, low, ub);
+		return ub;
+	}
+	private static void swap(int[] a, int low, int ub) {
 		int swap = a[low];
 		a[low] = a[ub];
 		a[ub] = swap;
-		sort(a,low,ub-1);
-		sort(a,ub+1,high);
 	}
 	public static void main(String[] args) {
 		//int[] a = {4,87,23,1,54};
-		int[] a = {7,10,4,3,20,15,18,25,30,1};
+//		int[] a = {7,10,4,3,20,15,18,25,30,1};
+//		int[] a = {5,9,6,8};
+		int[] a = {10,80,30,90,50,40};
 		sort(a);
 		System.out.println(count);
 		ArrayPrint.print(a);

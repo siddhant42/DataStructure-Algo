@@ -1,11 +1,17 @@
 package classesNobjects;
 
 import java.io.FileNotFoundException;
-
+/**
+ * This class demonstrates that if we clone an array of objects
+ * then it will not create deep copy of the array elements if
+ * the array is declared final 
+ * @author siddhant
+ *
+ */
 class A1 implements Cloneable {
-	int a;
-	final Integer[] b;
-	String c;
+	private int a;
+	private final Integer[] b;
+	private String c;
 
 	public A1(int a, Integer[] b) {
 		super();
@@ -26,6 +32,27 @@ class A1 implements Cloneable {
 	void m1() throws FileNotFoundException {
 		System.out.println("inside m1");
 	}
+
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+
+	public String getC() {
+		return c;
+	}
+
+	public void setC(String c) {
+		this.c = c;
+	}
+
+	public Integer[] getB() {
+		return b;
+	}
+	
 }
 public class Clone1 {
 	public static void main(String[] args) throws Exception {
@@ -35,10 +62,14 @@ public class Clone1 {
 		int k = 234;
 		A1 obj = new A1(k,p);
 		A1 obj2 = obj.clone();
+		obj2.setA(23);
+		System.out.println(obj.getA());
+		System.out.println(obj2.getA());
+		// can't assign as attribute b is final
 //		obj2.b = obj.b.clone();
-		obj2.b[0]=21;
-		System.out.println(obj2.b[0]);
-		System.out.println(obj.b[0]);
+		obj2.getB()[0]=21;
+		System.out.println(obj2.getB()[0]);
+		System.out.println(obj.getB()[0]);
 //		A1 obj2 = new A1(k,p);
 //		obj.b[0]=81;
 //		System.out.println(obj2.b[0]);

@@ -1,6 +1,6 @@
 package classesNobjects;
 
-public final class Employee{  
+public final class Employee {  
 	private String name;  
 
 	public Employee(String name){  
@@ -10,5 +10,10 @@ public final class Employee{
 	public String getName(){  
 		return name;  
 	}  
-	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String toString() {
+		return name;
+	}
 } 
